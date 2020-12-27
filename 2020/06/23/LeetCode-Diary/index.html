@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Ding Zhou">
+
+
+
+    <meta name="description" content="To record my daily life">
+
+
+
+<title>LeetCode Diary | Dingz</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Dingz&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Dingz&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">LeetCode Diary</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Ding Zhou</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">June 23, 2020&nbsp;&nbsp;0:33:36</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/LeetCode/">LeetCode</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="6-3-2020"><a href="#6-3-2020" class="headerlink" title="6/3/2020"></a>6/3/2020</h3><p>[BFS] 127. Word Ladder</p>
+<ul>
+<li>(Breadth First Search) 广度优先搜索 queue实现</li>
+</ul>
+<h3 id="6-19-2020"><a href="#6-19-2020" class="headerlink" title="6/19/2020"></a>6/19/2020</h3><p>[Queue] 295. Find Median</p>
+<ul>
+<li>multiset 已经排过 TC:O(nlogn)</li>
+<li>priority_queue</li>
+<li>lower_bound / upper_bound</li>
+</ul>
+<p>[Database] 175. Combine Two Table</p>
+<ul>
+<li>left join</li>
+</ul>
+<h3 id="6-20-2020"><a href="#6-20-2020" class="headerlink" title="6/20/2020"></a>6/20/2020</h3><p>[Hash Table] 299. Bulls and Cows</p>
+<ul>
+<li>i++ &amp; ++i</li>
+<li>if (i++ &lt; 0) 先判断后加</li>
+<li>if (i++ &amp;&amp; j++) 左判错右不运行</li>
+</ul>
+<h3 id="6-22-2020"><a href="#6-22-2020" class="headerlink" title="6/22/2020"></a>6/22/2020</h3><p>[Merge Sort] 315. Count of Smaller Numbers After Self</p>
+<ul>
+<li>merge sort 并列排序 TC:O(nlogn) 分治法（Divide and Conquer）<br><a target="_blank" rel="noopener" href="https://leetcode.com/problems/count-of-smaller-numbers-after-self/discuss/138154/The-C%2B%2B-merge-sort-template-for-pairs-'i'-'j'-problem">Merge Sort C++ 用法模式通解</a></li>
+<li>inplace_merge</li>
+</ul>
+<h3 id="6-24-2020"><a href="#6-24-2020" class="headerlink" title="6/24/2020"></a>6/24/2020</h3><p>[DP] 375. Guess Number Higher or Lower II</p>
+<ul>
+<li>dp内外循环迭代方向</li>
+<li>利用deque保证单调性，头部去除较大数，尾得最小，（为什么不用min， 需保存数字判定k）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Site1997/article/details/100168676">很难想的O(n^2)解法，单调与非单调比较</a></li>
+</ul>
+<h3 id="6-25-2020"><a href="#6-25-2020" class="headerlink" title="6/25/2020"></a>6/25/2020</h3><p>[stack] 394. Decode String</p>
+<ul>
+<li>利用stack储存分类信息；分层对齐，在stack中的位置对应括号层级</li>
+</ul>
+<h3 id="6-26-2020"><a href="#6-26-2020" class="headerlink" title="6/26/2020"></a>6/26/2020</h3><p>[DFS] 399. Evaluate Division</p>
+<ul>
+<li>(Depth First Search) 深度优先搜索 每个分支走到底，visited set 记录已访问分支</li>
+</ul>
+<h3 id="6-27-2020"><a href="#6-27-2020" class="headerlink" title="6/27/2020"></a>6/27/2020</h3><p>[DP] 552. Student Attendance Record II</p>
+<ul>
+<li>起初以为是排列组合，最后用dp，按特征分类，再找各类别之间的联系。</li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/modulo-1097-1000000007/">Modulo 10^9+7 (1000000007)</a></li>
+</ul>
+<h3 id="6-28-2020"><a href="#6-28-2020" class="headerlink" title="6/28/2020"></a>6/28/2020</h3><p>[prefix sum] 560. Subarray Sum Equals K</p>
+<ul>
+<li>一开始会以为简单地用sliding window, 但是不对，integer可以小于0，sum不是单增的，以下为错解：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">subarraySum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">int</span> l = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">int</span> intSum = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> r = <span class="number">0</span>; r &lt; nums.size(); r++) &#123;</span><br><span class="line">        intSum += nums[r];</span><br><span class="line">        <span class="keyword">while</span> (l &lt;= r &amp;&amp; intSum &gt;= k) &#123;</span><br><span class="line">          <span class="keyword">if</span> (intSum == k) &#123;</span><br><span class="line">            cnt++;</span><br><span class="line">          &#125;</span><br><span class="line">          intSum -= nums[l++];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>正解<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/80069107">prefix sum</a>（前缀和）：核心思想是如果0~i的和与0~j的和相等（i &lt; j）,那么[i,j]内的链表值和为零。</li>
+<li>map, unordered_map的key不存在时查询到的值为0。为啥？</li>
+</ul>
+<p>[DP] 562. Longest Line of Consecutive One in Matrix</p>
+<ul>
+<li>DP的思维（2D或者3D），但注意到四个方向其实并没有什么联系，就没必要用DP，直接分开计算。</li>
+<li>看到一个小trick，map的时候通过(0,.1,.2,.3)来区分(horizontal, vertical, diagonal or anti-diagonal)，避免int对key的重复命名。以及先++再乘0或1避免写if的繁琐。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M.size(); i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; M[i].size(); j++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">float</span> key: &#123;(<span class="keyword">float</span>)i, j+(<span class="keyword">float</span>)<span class="number">.1</span>, i-j+(<span class="keyword">float</span>)<span class="number">.2</span>, i+j+(<span class="keyword">float</span>)<span class="number">.3</span>&#125;) &#123;</span><br><span class="line">                maxlen = max(maxlen, ++len[key] *= M[i][j]);</span><br></pre></td></tr></table></figure>
+<a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-line-of-consecutive-one-in-matrix/discuss/102302/Short-and-simple-C%2B%2B-and-Python">直接用float[]转化</a>会有double转float的问题，目前只知道这么解决。</li>
+</ul>
+<h3 id="7-2-2020"><a href="#7-2-2020" class="headerlink" title="7/2/2020"></a>7/2/2020</h3><p>[DP] 264. Ugly Number II</p>
+<ul>
+<li>观察最后乘以2，3，5的三列，每列都是与当前列的pointer指向的ugly number相乘，取三列当前最小。</li>
+<li>用minheap会用到priority_queue, 自带对数排序时间。</li>
+</ul>
+<p>[DFS]107. Binary Tree Level Order Traversal II</p>
+<ul>
+<li>reverse(ans.begin(), ans.end()); 对vector</li>
+<li>标记层数traverse the tree</li>
+<li>vector转tree直接用2n，2n+1查询</li>
+</ul>
+<p>[DP]957. Prison Cells After N Days</p>
+<ul>
+<li>唯一很坑的是这是一个循环，需要找出循环避免重复运算，想不到的话就很超时。而且循环无始末，只需要长度，所以其实只用记录第一天的来看后面会不会有重复。</li>
+</ul>
+<h3 id="7-3-2020"><a href="#7-3-2020" class="headerlink" title="7/3/2020"></a>7/3/2020</h3><p>[] 461. Hamming Distance</p>
+<ul>
+<li>bit operator: XOR(同位异或)operator “^”; AND “&amp;”</li>
+<li>bits shift operator “&lt;&lt;” “&gt;&gt;”</li>
+<li>Brian Kernighan’s Algorithm 通过”x&amp;(x-1)”消除最右边的1，最终消除为0完成计数。</li>
+</ul>
+<p>[] 66. Plus One</p>
+<ul>
+<li>Why no push/pop in front of vector? Answer: push_front has no way to run quickly, because, in addition to a possible reallocation, all items need to be copied by one position. This gives you an amortized performance of O(n2) for n objects, which is not something that library designers wanted to encourage.</li>
+</ul>
+<h3 id="7-8-2020"><a href="#7-8-2020" class="headerlink" title="7/8/2020"></a>7/8/2020</h3><p>[] 15. 3Sum</p>
+<ul>
+<li>先sort,TC只用O(logn),再用两个pointer，外层O(n)内层其实是小于O(n)的。所以总的为O(n^2)。</li>
+</ul>
+<h3 id="7-9-2020"><a href="#7-9-2020" class="headerlink" title="7/9/2020"></a>7/9/2020</h3><p>[BFS] 662. Maximum Width of Binary Tree</p>
+<ul>
+<li>用queue记录每层node，记得记录每层个数。</li>
+<li>为避免overflow，可将root设置为最靠近root且没有同level节点的节点。</li>
+</ul>
+<h3 id="7-10-2020"><a href="#7-10-2020" class="headerlink" title="7/10/2020"></a>7/10/2020</h3><p>[Data Structure] 430. Flatten a Multilevel Doubly Linked List</p>
+<ul>
+<li>不用考虑函数嵌套，子类的子类依然会在第一层循环中遇见。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (Node* h = head; h; h = h-&gt;next) &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>注意末端没有next。</li>
+</ul>
+<h3 id="7-11-2020"><a href="#7-11-2020" class="headerlink" title="7/11/2020"></a>7/11/2020</h3><p>[] 78. Subsets</p>
+<ul>
+<li>最直接的方法是Iterative,依次加入每个数。</li>
+<li>Bit Manipulation注意移位（1 &lt;&lt; n）2的n次方，（&amp; 1）找出奇数的好方法。</li>
+<li>Recursive (Backtracking)的方法。</li>
+</ul>
+<h3 id="7-12-2020"><a href="#7-12-2020" class="headerlink" title="7/12/2020"></a>7/12/2020</h3><p>[DP] 53. Maximum Subarray</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@rsinghal757/kadanes-algorithm-dynamic-programming-how-and-why-does-it-work-3fd8849ed73d#:~:text=Kadane's%20algorithm%20is%20able%20to,runtime%20of%20O(n).">Kadane’s Algorithm</a>: 其实也是greedy的思想，因为是同时加一个数，每次只用比较i-1最大和新增的0的大小关系来判断当前最大。</li>
+</ul>
+<h3 id="7-15-2020"><a href="#7-15-2020" class="headerlink" title="7/15/2020"></a>7/15/2020</h3><p>[] 151. Reverse Words in a String</p>
+<ul>
+<li>reverse(s.begin(), s.end())</li>
+</ul>
+<p>[recursive] 50. Pow(x, n)</p>
+<ul>
+<li>如果思路是从末端开始的就用recursive</li>
+<li>也可直接循环</li>
+</ul>
+<h3 id="7-22-2020"><a href="#7-22-2020" class="headerlink" title="7/22/2020"></a>7/22/2020</h3><p>[Graph] 210. Course Schedule II</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Topological_sorting#Kahn's_algorithm">topological sort</a> for directed graph</li>
+<li>Kahn’s algorithm, indegree为0的一定是优先排序。这也是BFS的思想。</li>
+<li>DFS</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/single-number-iii/discuss/326622/All-In-One-Summary-(Single-Number-I-II-III)">Single-Number-I-II-III</a></p>
+<h3 id="7-27-2020"><a href="#7-27-2020" class="headerlink" title="7/27/2020"></a>7/27/2020</h3><p>[Data Structure Binary Tree] 106. Construct Binary Tree from Inorder and Postorder Traversal</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/jmh1996/article/details/82827579">Master Theorem</a></li>
+<li>(a) Inorder (Left, Root, Right)<br>(b) Preorder (Root, Left, Right)<br>(c) Postorder (Left, Right, Root)</li>
+</ul>
+<h3 id="7-29-2020"><a href="#7-29-2020" class="headerlink" title="7/29/2020"></a>7/29/2020</h3><p>[DP] 309. Best Time to Buy and Sell Stock with Cooldown</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Finite-state_machine">state machine</a></li>
+</ul>
+<h3 id="7-31-2020"><a href="#7-31-2020" class="headerlink" title="7/31/2020"></a>7/31/2020</h3><p>[]70. Climbing Stairs</p>
+<ul>
+<li>Fibonacci Number</li>
+</ul>
+<h3 id="8-9-2020"><a href="#8-9-2020" class="headerlink" title="8/9/2020"></a>8/9/2020</h3><p>[Data Structure] 211. Add and Search Word - Data structure design</p>
+<ul>
+<li>Trie 字典查询树</li>
+</ul>
+<p>[Bits] 231. Power of Two</p>
+<ul>
+<li>Power of two has just one 1-bit</li>
+<li>x &amp; (x - 1) sets this 1-bit to zero, and hence one has to verify if the result is zero x &amp; (x - 1) == 0<br>[Bits] 231. Power of Four</li>
+<li>It is power of two first</li>
+<li>then (num &amp; 0xaaaaaaaa) == 0, 0xaaaaaaaa (8 bits) is 1010…10 (32 bits)</li>
+</ul>
+<h3 id="8-10-2020"><a href="#8-10-2020" class="headerlink" title="8/10/2020"></a>8/10/2020</h3>
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/LeetCode/"># LeetCode</a>
+                    
+                        <a href="/tags/Notes/"># Notes</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2020/07/02/Case-Interview-Notes/">Case Interview Notes</a>
+            
+            
+            <a class="next" rel="next" href="/2020/05/28/Leetcode84_85/">Notes for Leetcode 84 & 85</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Ding Zhou | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
